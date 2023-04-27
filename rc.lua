@@ -803,9 +803,22 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    -- Set Applicatons to always map on the tag that has the app's icon on screen 1.
+     { rule = { class = "Brave-browser" },
+       properties = { screen = 1, tag = "  " } },
+     { rule = { class = "Spotify" },
+       properties = { screen = 1, tag = "  " } },
+     { rule = { class = "discord" },
+       properties = { screen = 1, tag = " 󰙯 " } },
+     { rule = { class = "Steam" },
+       properties = { screen = 1, tag = " 󰓓 " } },
+     { rule = { class = "Houdini" },
+       properties = { screen = 1, tag = "  " } },
+     { rule = { class = "zoom" },
+       properties = { screen = 1, tag = " 󰍫 " } },
+     { rule = { class = "VirtualBox Manager" },
+       properties = { screen = 1, tag = "  " } },
+
 }
 -- }}}
 
@@ -874,6 +887,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- start picom
 awful.spawn.with_shell("picom &")
-awful.spawn.with_shell("sudo mount /dev/sdb2 /mnt/extra_storage")
-awful.spawn.with_shell("sudo mount /dev/sda1 /mnt/w10")
+awful.spawn.with_shell("megasync")
 -- }}}
