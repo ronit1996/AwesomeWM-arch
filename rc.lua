@@ -758,6 +758,8 @@ awful.rules.rules = {
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
+	             maximized_vertical = false,
+		     maximized_horizontal = false,
                      raise = true,
                      keys = clientkeys,
 		     titlebars_enabled = false,
@@ -805,7 +807,9 @@ awful.rules.rules = {
 
     -- Set Applicatons to always map on the tag that has the app's icon on screen 1.
      { rule = { class = "Brave-browser" },
-       properties = { screen = 1, tag = "  " } },
+       properties = { screen = 1, tag = "  ",
+		    maximized = false,
+		    floating = false} },
      { rule = { class = "Spotify" },
        properties = { screen = 1, tag = "  " } },
      { rule = { class = "discord" },
